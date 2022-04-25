@@ -12,7 +12,7 @@
 *.info
 *.properties
 *.jar
-.JavaRushTasks.zip
+JavaRushTasks.zip
 /out/
 /JavaRushPlugin.properties
 /Instruction.png
