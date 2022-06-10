@@ -1,0 +1,59 @@
+package com.javarush.task.jdk13.task14.task1407;
+
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
+
+/* 
+Player and Dancer
+*/
+
+public class Solution {
+    public static void main(String[] args) throws Exception {
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
+
+        Person person = null;
+        String key;
+        while (!(key = reader.readLine()).equals("exit")) {
+            if ("player".equals(key)) {
+                person = new Player();
+            } else if ("dancer".equals(key)) {
+                person = new Dancer();
+            }
+            haveFun(person);
+        }
+    }
+
+    public static void haveFun(Person person) {
+        if (person instanceof Player) {
+            ((Player) person).play();
+        }
+        if (person instanceof Dancer) {
+            ((Dancer) person).dance();
+        }
+    }
+
+    interface Person {
+    }
+
+    static class Player implements Person {
+        void play() {
+            System.out.println("playing");
+        }
+    }
+
+    static class Dancer implements Person {
+        void dance() {
+            System.out.println("dancing");
+        }
+    }
+}
+
+/*
+Требования:
+1.	Класс Player должен реализовывать интерфейс Person.
+2.	Класс Dancer должен реализовывать интерфейс Person.
+3.	Метод haveFun() должен вызывать метод play() у переданного ему объекта, если объект является игроком (Player).
+4.	Метод haveFun() должен вызывать метод dance() у переданного ему объекта, если объект является танцором (Dancer).
+5.	Метод main() должен считывать данные с клавиатуры.
+6.	Метод main() должен прекращать считывать данные с клавиатуры, если введенная строка равна &quot;exit&quot;.
+ */
