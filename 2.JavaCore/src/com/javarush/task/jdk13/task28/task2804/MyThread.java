@@ -6,6 +6,11 @@ public class MyThread extends Thread {
 
     private static volatile AtomicInteger threadPriority = new AtomicInteger(1);
 
+    @Override
+    public void run() {
+        super.run();
+    }
+
     public synchronized void correctPriority() {
         int priority = threadPriority.getAndIncrement();
         if (getThreadGroup() != null && priority > getThreadGroup().getMaxPriority()) {
