@@ -66,8 +66,6 @@ public class MyThread extends Thread {
     public MyThread(ThreadGroup group, Runnable target, String name, long stackSize, boolean inheritThreadLocals) {
         super(group, target, name, stackSize, inheritThreadLocals);
     }
-
-
 }
 
 /*
