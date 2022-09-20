@@ -14,7 +14,6 @@ public class ParseLinkTask implements Callable<Link> {
     @Override
     public Link call() {
         Link link = new Link();
-
         int colonIndex = line.indexOf(":");
         link.protocol = line.substring(0, colonIndex);
 
