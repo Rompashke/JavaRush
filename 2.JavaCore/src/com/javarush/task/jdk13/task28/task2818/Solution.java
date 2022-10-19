@@ -13,7 +13,6 @@ public class Solution {
     public static void main(String[] args) throws Exception {
         ScheduledFuture<Integer> futureTask = scheduledPool.schedule(new TheUltimateQuestion(), 2737500000L, TimeUnit.DAYS);
         System.out.println(futureTask.get());
-
         scheduledPool.shutdown();
     }
 }
