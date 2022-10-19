@@ -18,8 +18,6 @@ public class Solution {
         scheduledPool.scheduleAtFixedRate(() ->
             System.out.println(LocalTime.now())
         , 0 , 500, TimeUnit.MILLISECONDS);
-
-
         Thread.sleep(3000);
         scheduledPool.shutdown();
     }
